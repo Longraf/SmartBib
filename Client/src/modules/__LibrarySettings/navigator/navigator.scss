@@ -1,0 +1,11 @@
+.local-navigator {
+  width: 200px;
+  color: white;
+  .navigator-li{
+    background: $clr-nav;
+    padding: 0 20px;
+    &.active{
+      color: $clr-hover;
+    }
+  }
+}

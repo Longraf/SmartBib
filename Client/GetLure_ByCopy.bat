@@ -1,0 +1,1 @@
+xcopy  "c:\Webexpress\Lure-js\Lure\dist" %cd%\src\lure /e/i/y

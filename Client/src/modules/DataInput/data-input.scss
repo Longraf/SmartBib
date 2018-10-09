@@ -1,0 +1,161 @@
+$weekend_back: #EDEDED;
+$day_name_back: #DFDFDF;
+$table_border: #D2D2D2;
+$days_border: #E2E2E2;
+$last_month: #D9D9D9;
+$lock_locked: #6B6966;
+$holiday_locked: #DB7AAF;
+$icon_hover: #C5C5C5;
+$icon_param: #6B6966;
+
+.data-input {
+  width: 100%;
+  height: calc(100vh - #{$h-header + $h-footer});
+  /*will-change: transform;*/
+  .affiche-table {
+    height: calc(100vh - #{$h-header + $h-footer + 30px});
+    overflow: auto;
+  }
+  .data-plan-input {
+    width: 100%;
+    height: calc(100vh - #{$h-header + $h-footer});
+  }
+  .data-plan-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .dp-wrap-out {
+    position: relative;
+    height: calc(100vh - 110px);
+    overflow: auto;
+    will-change: transform;
+  }
+  .daily-chart-container{
+    height: 400px;
+    .daily-chart, .chart-container{
+      height: 100%;
+    }
+  }
+  .data-plan-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .widget-container{
+    width: 700px;
+    min-width: 700px;
+    min-height: 580px;
+    margin: 10px;
+    .container-header{
+      background: $clr-base;
+      color: white;
+      font-size: 1.1em;
+      padding: 0 30px;
+      height: 40px;
+      align-items: center;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      justify-content: space-between;
+      .header-counts {
+        transition: 500ms linear;
+        padding: 7px;
+        border-radius: 5px;
+        &.alert {
+          background: red;
+        }
+      }
+    }
+    .container-body{
+      height: calc(100% - 69px);
+    }
+    .bottom-buttons {
+      background: $clr-base;
+      height: 28px;
+      display: flex;
+      justify-content: space-around;
+      button {
+        /*color: white;*/
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
+      .cancel-button, .save-button {
+        background: #5D99A8;
+        flex: calc(2 / 7);
+      }
+      .distribute-evenly-button {
+        background: #4B7F85;
+        flex: calc(3 / 7);
+      }
+    }
+  }
+  .less, .more {
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      width: 6px;
+      height: 6px;
+      border: 2px solid #fff;
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+  }
+  .less {
+    padding-right: 14px;
+    padding-left: 4px;
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+  .more {
+    padding-left: 1px;
+    padding-right: 20px;
+    &::before {
+      transform: rotate(135deg);
+    }
+  }
+  .l-chart {
+    .chart-tooltip {
+      z-index: 3;
+    }
+  }
+
+ .param-icon {
+    &.people-icon, &.card-icon, &.books-icon, &.locked-icon, &.holiday-icon {
+      height: 30px;
+      width: 30px;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #6B6966;
+    }
+    &.people-icon {mask-image: url(img/vvod-dannih-posesheniya.svg);}
+    &.card-icon {mask-image: url(img/vvod-dannih-zapis.svg);}
+    &.books-icon {mask-image: url(img/vvod-dannih-knigovidacha.svg);}
+    &.locked-icon {height: 16px; width: 16px; mask-image: url(img/lock.svg);}
+    &.holiday-icon {height: 19px; width: 19px; mask-image: url(img/vvod-dannih-vihodnoy.svg);}
+  }
+  .other-month .param-icon {
+    &.people-icon, &.card-icon, &.books-icon {background-color: #d9d9d9;}
+  }
+  .index-table .param-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@import "data-plan-input/calendar/calendar";
+@import "data-plan-input/charts/charts";
+/*@import "data-affiche-input/events-settings/events-settings";*/
+@import "data-affiche-input/date-affiche-input";
+.plan-chart {
+  height: 300px;
+  padding: 10px 15px;
+  .legend-box {
+    border: 1px $clr-grey solid;
+    margin-left: 15px
+  }
+}

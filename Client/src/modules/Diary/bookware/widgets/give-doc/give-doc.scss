@@ -1,0 +1,38 @@
+.give-doc-widget{
+  .widget-icon{
+    mask-image: url('img/vvod-dannih-knigovidacha.svg');
+  }
+  .widget-content{
+    padding-left: 15px;
+  }
+  .inputs{
+    padding: 10px 0 15px 0;
+  }
+  .caption{
+    font-size: 1.1em;
+  }
+  .radio-item{
+    min-width: 135px;
+    padding: 4px 0;
+  }
+
+  .margin-group{
+    margin-top: 10px;
+  }
+  .button-holder{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    .button{
+      width: 84px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .checkbox-holder{
+    padding: 7px 0;
+  }
+}

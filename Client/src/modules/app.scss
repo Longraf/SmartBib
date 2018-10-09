@@ -1,0 +1,273 @@
+@import "_common/font";
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center,
+cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form,
+h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output,
+p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead,
+time, tr, tt, u, ul, var, video{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+$clr-base:      #5C9BAA; //green?
+$clr-base-dark: #4A7F87; //green?darken
+$clr-changed: black;
+
+
+$clr-content0: #F2F2F2;  //almost white
+$clr-content: #E1E1E1;  //grey
+$clr-content2: #C8C7C7; //grey darken
+
+$clr-disabled: #AFAFAF; //grey dark
+
+$clr-nav: #2E3D44;       //greeny very dark
+$clr-nav-open: #232E33;  //greeny darkest
+$clr-nav-active: #172A30;
+
+$clr-hover: #00ECFF;    //light blue
+$clr-active: #00ECFF;
+
+
+$clr-waiting: hsl(52, 100%, 86%); //yellow
+
+$clr-changed:   hsl(174, 100%, 29%); //green
+$clr-error:     hsl(4, 90%, 58%);//hsl(4, 100%, 67%);
+
+$clr-grey: #CAC8C9;
+/*unconfirmed*/
+$clr-button: $clr-base;
+$clr-button-active: #00598E;
+$clr-button-hover: #00598E; 
+
+/* ---------etc.  */
+$clr-hover: #00ECFF;
+$clr-active: #00ECFF;
+
+$clr-selected: hsla(34, 100%, 65%, 1);//#FFC070;
+
+
+$clr-header: #1B4D6A;
+
+$clr-link:   #328FC6;
+
+$clr-error-text:hsl(4, 100%, 65%);
+
+$clr-ok-text:   hsl(140, 55%, 45%);
+$clr-warn:      hsl(34, 100%, 65%);//#FFC070;
+$clr-warn-text: hsl(34, 100%, 50%);
+
+
+$clr-ok-active:    hsl(140, 60%, 45%);
+$clr-error-active: hsl(4, 100%, 65%);;
+/*--*/
+
+
+
+$clr-head: #5a98bf;
+$clr-subhead: hsl(203, 35%, 60%);
+$clr-interlinear: #dfeaf1;
+
+
+
+$clr-mount: #add3eb;      //light blue
+$clr-available: #2694d9;  //kind of blue
+
+
+
+
+
+
+
+.clr-b{ background-color: #006fb3;}
+
+.clr-base{ background-color: $clr-base;}
+.clr-header{ background-color: $clr-header;}
+.clr-button{ background-color: $clr-button;}
+.clr-link{ background-color: $clr-link;}
+.clr-hover{ background-color: $clr-hover;}
+.clr-disabled{ background-color: $clr-disabled;}
+
+
+/* ScrollBar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: $clr-interlinear;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $clr-base;
+  &:hover {
+    background: $clr-base-dark;
+  }
+}
+
+
+
+
+
+
+h1{
+  font-size: 1.65em;
+  padding: 15px;
+}
+
+/* Lure css override */
+.lure-confirm,
+.l-tutor{
+  .cd-caption{
+    background-color: $clr-base;
+    color: #fff;
+  }
+  .cd-buttons{
+    justify-content: center;
+    padding: 15px 30px;
+  }
+  .button{
+    //padding: 5px 10px;
+    flex: 1;
+  }
+  .btn-diag-confirm{
+    background-color: $clr-button;
+  }
+  .btn-diag-cancel{
+    background-color: $clr-base-dark;
+  }
+}
+//lure-periodpicker
+.lure-periodpicker{
+  border: none;
+  .l-pp-head{
+    //background-color: #79cddb;
+    //color: #fff;
+  }
+  //.close.black{
+  //  background: url(/lure/img/icon-x_white.svg) no-repeat center;
+  //}
+}
+
+.lure-loading{
+  svg{
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+  }
+  .custom-load-pass{
+    transform: rotate(360deg);
+    transform-origin: center center;
+    animation-name: LoadRotate;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+@keyframes LoadRotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  1000%{
+    transform: rotate(100deg);
+  }
+}
+
+.l-hint{
+  &:before{
+    padding: 10px 15px;
+    background-color: #FFE6AC;
+    transition: 200ms ease-in all;
+    box-shadow: 5px 3px 10px -3px rgba(0,0,0,0.3);
+  }
+  &:hover::before{
+    display: block;
+    opacity: 1;
+  }
+}
+
+@import "_common/headline/headline";
+@import "_common/footer/footer";
+
+@import "_common/navigator/navigator";
+@import "__LibrarySettings/library-settings";
+@import "_common/widget";
+
+@import "Featured/Featured";
+@import "Diary/Diary";
+@import "Passport/Passport";
+@import "DataInput/data-input";
+@import "Dash/dashboard";
+
+@import "WDash/wdashboard";
+
+@import "HelpDesk/HelpDesk";
+@import "_DashTester/DashTester";
+@import "Admin/Admin";
+@import "Account/Account";
+@import "Meter/Meter";
+
+
+
+@import "_common/__numpad__deprecated/numpad";
+@import "_common/input-box/input-box";
+@import "_common/library-tree/library-tree";
+@import "_common/list-selector/list-selector";
+
+body{
+  overflow: hidden;
+}
+.body{
+  min-height: calc(100vh - #{$h-header + $h-footer}); //100% - header - footer
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.content{
+  flex: 1;
+  //min-width: 1200px;
+  //overflow: auto;
+}
+
+.button{
+  background-color: $clr-button;
+  color: #fff;
+  padding: 3px 10px;
+  &:hover{
+    background-color: darken($clr-button, 3%);
+  }
+}
+.button2{
+  background-color: $clr-base-dark;
+  &:hover{
+    background-color: darken($clr-base-dark, 3%);
+  }
+}
+
+
+.strong{
+  font-weight:bold;
+}
+.list-empty{
+  text-align: center;
+  font-style: italic;
+}
+.textbox{
+  padding-left: 5px;
+}
+
+
+
+
+
+
+
+//### TEMPORARY CSS
+//#nav-meter-incoming{
+//  display: none;
+//}

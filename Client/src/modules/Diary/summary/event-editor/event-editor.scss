@@ -1,0 +1,173 @@
+$line-editor-width: 320px;
+.line-editor{
+  width: $line-editor-width;//276px;
+  height: calc(100vh - 58px - 28px);
+  background-color: $clr-nav;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #e1e1e1;
+  padding-top: 28px;
+
+  box-shadow: -5px 10px 10px rgba(0,0,0,0.4);
+  will-change: left;
+  .head{
+    height: 85px;
+    min-height: 85px;
+    .h2{
+      padding: 15px;
+      text-align: center;
+      //font-size: 1.1em;
+    }
+    .date-shifter{
+      font-size: 1.1em;
+    }
+    .date-shift-control{
+      height: 14px;
+      width:  20px;
+      position: relative;
+      cursor: pointer;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #fff;
+        border-right: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+      }
+      &.left:before{
+        top: 0;
+        right: 0;
+        transform: rotate(-45deg);
+      }
+      &.right:before{
+        top: 0;
+        left: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  .list{
+    overflow: auto;
+    will-change: top;
+    .line-item{
+      align-items: center;
+      padding: 0 7px;
+      &:nth-child(2n+1){
+        background-color: $clr-nav-open;
+      }
+      &:last-child:not(:nth-child(2n+1)){
+        border-bottom: 3px $clr-nav-open solid;
+      }
+      .name, .value{
+        height: 20px;
+      }
+      .value{
+        min-width: 40px;
+        text-align: right;
+        border-left: 1px $clr-nav solid;
+      }
+      &.changed{
+        background-color: $clr-changed; //$clr-ok
+      }
+      &.invalid{
+        background-color: $clr-error;
+      }
+      .value-value{
+        cursor: default;
+        color: #00ecff;
+      }
+      .numpadable{
+        cursor: pointer;
+        color: #e1e1e1;
+      }
+    }
+    .hint{
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 0;
+      left: -11px;
+      border-radius: 50%;
+      background-color: $clr-content;
+      color: #111;
+      text-align: center;
+      font-size: 0.7em;
+      &:before{
+        width: 200px;
+        left: auto;
+        bottom: auto;
+        right: 95%;
+        top: 65%;
+        padding: 10px;
+        background-color: $clr-base;
+        color: #e1e1e1;
+        border-radius: 15px 0 15px 15px;
+      }
+    }
+  }
+  .foot{
+    height: 200px;
+    min-height: 200px;
+    align-items: flex-end;
+    position: relative;
+    .errors{
+      position: absolute;
+      color: $clr-error-text;
+      padding: 10px 0;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .button{
+      margin-bottom: 60px;
+      display: block;
+    }
+  }
+
+
+  &.animation-show{
+    animation: line-editor-animation-show 200ms ease-in;
+  }
+  &.animation-hide{
+    opacity: 0;
+    animation: line-editor-animation-hide 200ms ease-out;
+  }
+  @keyframes line-editor-animation-show {
+    0% {
+      right: -$line-editor-width;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  @keyframes line-editor-animation-hide {
+    0% {
+      right: 0;
+      opacity: 1;
+    }
+    100% {
+      right: -$line-editor-width;
+      opacity: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

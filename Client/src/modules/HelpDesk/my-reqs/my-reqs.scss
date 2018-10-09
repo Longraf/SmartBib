@@ -1,0 +1,297 @@
+.req-space {
+  .l-t-empty td {text-align: center;}
+  height: calc(100vh - 138px);
+  display: flex;
+  flex-direction: row;
+  &.user-space {
+    .not-for-user {display: none}
+    .for-tech {display: none;}
+  }
+  &.tech-space {
+    .for-user {display: none;}
+    .not-for-tech {display: none;}
+  }
+  &.moder-space {
+    height: 444px;
+    .for-user {display: none;}
+    .for-tech {display: none;}
+  }
+}
+.my-requests {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  .library-tree {z-index: 3}
+}
+
+.file-link {cursor: pointer;}
+.my-reqs-list {
+  overflow: auto;
+  height: calc(100vh - #{$h-header + $h-footer + 30px} - 28px);
+  flex: 3.5;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid #88898B;
+    padding: 5px;
+    //vertical-align: sub;
+    max-width: 300px;
+    vertical-align: middle;
+    &.my-reqs-applic, &.my-reqs-priority {min-width: 120px;}
+    &.my-reqs-complete-date {min-width: 130px;}
+    &.my-reqs-req-type {min-width: 110px;}
+    &.my-reqs-status {min-width: 100px;}
+    &.td-reqs-num, &.td-create-date, &.td-complete-date, &.td-closed-date {text-align: center}
+  }
+  thead tr {
+    background-color: #F1F1F1;
+    th {
+      text-align: center;
+      white-space: nowrap;
+      //overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  tbody tr {
+    cursor: default;
+    &:nth-child(2n - 1) {background: #E0E0E0;}
+    &:nth-child(2n) {background: #F1F1F1;}
+    &.selected, &:hover {background: #5D9BAA; color: white;}
+  }
+  .req-head {
+    text-align: left;
+    position: relative;
+    .control {
+      //position: absolute;
+      right: 0;
+      top: 0;
+      height: 25px;
+      max-width: 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 3;
+    }
+    .filter, .sorting {
+      width: 27px;
+      height: 24px;
+      cursor: pointer;
+      font-weight: 600;
+      //background-color: #f9f7f7b3;
+    }
+    .filter {position: relative;}
+    .sorting .l-sorter {
+      width: 18px;
+      height: 18px;
+      mask-image: url(img/vvod-dannih-sort.svg);
+      background: black;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      margin-top: -8px;
+      &:hover {background: #666666;}
+      &.l-sorter-up {mask-image: url(img/vvod-dannih-sort-2.svg);}
+      &.l-sorter-down {mask-image: url(img/vvod-dannih-sort-1.svg);}
+    }
+  }
+  .event-row {
+    &.mass-select {
+      background: #fff6ba;
+      color: #000;
+    }
+  }
+  .my-reqs-checks {
+    width: 40px;
+    .wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .mass-actions {
+      padding: 1px 4px;
+      font-size: 0.9em;
+    }
+  }
+  .mass-check {text-align: center;}
+  .action-list {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid black;
+    z-index: 5;
+    .action-type {
+      padding: 2px 12px;
+      cursor: pointer;
+      &:hover {background: #5D9BAA;color: white;}
+    }
+  }
+  .head-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.my-req-header {
+  display: flex;
+  flex-direction: row;
+  background: #2f3d44;
+  color: white;
+  .req-tab {
+    padding: 5px 25px;
+    cursor: pointer;
+    margin: 2px;
+  }
+  .selected {
+    background: #fff;
+    color: black;
+  }
+  .need-solution-my-reqs {color: #FF8C39}
+  .req-search {
+    display: flex;
+    justify-content: flex-end;
+    .search-input {
+      padding: 0 5px;
+      color: #00ecff;
+      background: black;
+      border: 1px solid #5c9baa;
+      margin: 2px 0;
+    }
+  }
+}
+.status-dot {
+  //border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  box-shadow: 0 0 0 1px #939699;
+  margin: 1px 8px;
+  &.new {background: #B84741;}
+  &.active {background: #FBAB4A;}
+  &.closed {background: #24934F;}
+  &.rejected {background: #F14940;}
+  &.returned {background: #D0DF3C;}
+  &.low {background: green;}
+  &.mid {background: yellow;}
+  &.high {background: red;}
+  &.exec-date {background: blue;}
+}
+
+$line-editor-width: 400px;
+
+.date-range {
+  display: flex;
+  flex-direction: row;
+  .calendar-icon {
+    padding: 0 5px;
+  }
+}
+.sidebar-container {
+  height: 0;
+}
+
+.data-card {
+  border: 2px solid #95B3BE;
+  background: #EFEFEF;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  .data-name {
+    width: 120px;
+  }
+  .data-name, .data-value {
+    display: table-cell;
+  }
+  .card-data-row {
+    display: table-row;
+    padding: 2px 0;
+  }
+  .card-header {
+    color: #00afbe;
+    font-weight: 600;
+    padding: 0 0 10px 0;
+  }
+  .full-card-data {
+    max-height: 100px;
+    overflow: auto;
+  }
+}
+@import "sidebar/sidebar";
+@import "sidebar/moder-sidebar";
+
+.my-reqs-list-body {
+  &.active-tab-show {
+    .closed-req, .rejected-req/*, .returned-req*/ {display: none;}
+  }
+  &.closed-tab-show {
+   .rejected-req, .returned-req, .active-req, .new-req {display: none;}
+  }
+  &.need-solution-tab-show {
+    .closed-req, .active-req, .new-req {display: none;}
+  }
+  .filtered {
+    display: none
+  }
+}
+
+.toggle-filter {
+  z-index: 5;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  mask-image: url(img/vvod-dannih-filter.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background: black;
+  &:hover {background: #666666;}
+}
+
+/*------------ANIMATIONS---------------*/
+.vertical-animation-show {
+  animation: vertical-sidebar-show 200ms ease-in;
+  height: 50vh;
+}
+.vertical-animation-hide {
+  animation: vertical-sidebar-hide 200ms ease-out;
+  height: 0;
+}
+.vertical-animation-show-no-anim {
+  height: 50vh;
+}
+.vertical-animation-hide-no-anim {
+  height: 0;
+}
+@keyframes vertical-sidebar-show {
+  0% {height: 0;}
+  100% {height: 50vh;}
+}
+@keyframes vertical-sidebar-hide {
+  0% {height: 50vh;}
+  100% {height: 0;}
+}
+
+.animation-show {
+  animation: line-editor-animation-show 200ms ease-in;
+  width: 450px;
+}
+.animation-hide {
+  width: 0;
+  animation: line-editor-animation-hide 200ms ease-out;
+}
+@keyframes line-editor-animation-show {
+  0% {width: 0;}
+  100% {width: 450px;}
+}
+@keyframes line-editor-animation-hide {
+  0% {width: 450px;}
+  100% {width: 0;}
+}
+/*------------ANIMATIONS---------------*/

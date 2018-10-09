@@ -1,0 +1,27 @@
+@import "_common/font";
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center,
+cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form,
+h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output,
+p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead,
+time, tr, tt, u, ul, var, video{
+  //font-family: 'PT Sans Narrow', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+}
+.body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#fff, #A9A9A9);
+  overflow: hidden;
+}
+
+@import "_auth/logon";
+
+@media screen and (max-height: 600px){
+  .authentication{
+    padding-bottom: 0;
+  }
+}

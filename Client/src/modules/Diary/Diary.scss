@@ -1,0 +1,41 @@
+$h-dairy-bread: 28px;
+
+.diary{
+  &.previous{
+    filter: grayscale(75%);
+  }
+  overflow: auto;
+
+  .widget-control-move{
+    display: none;
+  }
+}
+
+.diary-bread{
+  height: $h-dairy-bread;
+  align-items: center;
+  background-color: $clr-grey;
+  .diary-date{
+    min-width: 270px;
+  }
+  .diary-library{
+    min-width: 270px;
+    .select{
+      width: 100%;
+    }
+  }
+  .li{
+    padding: 0 15px;
+    border-right: 1px darken($clr-grey, 15%) solid;
+    &:last-child{
+      border: none;
+    }
+  }
+
+
+}
+//@import "../_common/draganddropitem";
+@import "visitation/visitation";
+@import "bookware/bookware";
+@import "summary/summary";
+@import "movings/movings";

@@ -1,0 +1,47 @@
+.meter-common-info{
+  background-color: #DFDFDF;
+  width: 350px;
+  color: black;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  .head {
+    text-align: center;
+    //padding: 15px 0;
+    padding: 25px 15px;
+    font-size: 1.25em;
+    h2 {
+      padding: 5px 15px;
+      font-size: 1.5em;
+    }
+    h3 {font-size: 1.2em;}
+  }
+  .data-card {
+    border: 2px solid #95B3BE;
+    background: #EFEFEF;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    .data-name {
+      width: 120px;
+    }
+    .data-name, .data-value {
+      display: table-cell;
+    }
+    .card-data-row {
+      display: table-row;
+      padding: 2px 0;
+    }
+    .card-header {
+      color: #00afbe;
+      font-weight: 600;
+      padding: 0 0 10px 0;
+    }
+    .full-card-data {
+      max-height: 100px;
+      overflow: auto;
+    }
+  }
+}

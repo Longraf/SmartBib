@@ -1,0 +1,41 @@
+.meter-value-input{
+  width: 400px;
+  background-color: $clr-content;
+  left: calc(50% - 200px);
+  top: 200px;
+  .l-close{
+    height: 30px;
+    width: 30px;
+  }
+  .head{
+    background-color: $clr-base;
+    color: #fff;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+  }
+  .inner-content{
+    padding: 15px;
+  }
+  .line{
+    padding: 5px 0;
+    .caption{
+      width: 120px;
+    }
+  }
+  .television{
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    border: 1px $clr-base solid;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .button-holder{
+    padding-top: 20px;
+  }
+}

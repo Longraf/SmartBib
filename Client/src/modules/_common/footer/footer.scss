@@ -1,0 +1,19 @@
+$h-footer: 24px;
+
+.footer{
+  height: $h-footer;
+  min-height: $h-footer;
+  border-top: 1px $clr-content2 solid;
+  background-color: $clr-content;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 0.8em;
+  color: #777;
+  .foot-item{
+    padding: 0 7px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,56 @@
+.dash-tester{
+  height: calc(100vh - #{$h-header + $h-footer});
+
+
+  .le-chart-1{
+    height: 100%;
+    padding: 15px;
+  }
+
+  .widget{
+    border: 1px $border-color solid;
+    .widget-head{
+      background-color: #fff;
+      color: $clr-base;
+    }
+    .widget-content{
+      background-color: #fff;
+    }
+    .resizer{
+      position: absolute;
+      z-index: 1;
+      user-select: none;
+      height: 15px;
+      width: 15px;
+
+      bottom: 0;
+      right: 0;
+      //background-color: rgba(31,213,212, 0.7);
+      cursor: nw-resize;
+      &:before{
+        content: '';
+        width: 5px;
+        height: 1px;
+        background-color: $border-color;
+        transform: rotate(-45deg);
+        position: absolute;
+        z-index: 1;
+        bottom: 2px;
+        right: 1px;
+        transform-origin: 50% 50%;
+      }
+      &:after{
+        content: '';
+        width: 14px;
+        height: 1px;
+        background-color: $border-color;
+        transform: rotate(-45deg);
+        position: absolute;
+        z-index: 1;
+        bottom: 5px;
+        right: -1px;
+        transform-origin: 50% 50%;
+      }
+    }
+  }
+}

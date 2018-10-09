@@ -1,0 +1,122 @@
+$line-editor-width: 400px;
+
+.events-editor {
+  width: $line-editor-width;
+  max-width: $line-editor-width;
+  height: calc(100vh - 58px - 28px);
+  background-color: $clr-nav;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #e1e1e1;
+  padding-top: 10px;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.4);
+
+  will-change: left;
+  .head {
+    height: 65px;
+    .h2 {
+      padding: 15px;
+      text-align: center;
+    }
+  }
+  .center-img {display: flex; justify-content: center;}
+  .affiche-img {
+    max-height: 100px;
+    max-width: 300px;
+  }
+  .list {
+    overflow: auto;
+    will-change: top;
+    flex: 1;
+    .line-item {
+      /*align-items: center;*/
+      padding: 3px 10px;
+      flex-direction: column;
+      &:nth-child(2n+1) {background-color: $clr-nav-open;}
+      &:last-child:not(:nth-child(2n+1)) {border-bottom: 3px $clr-nav-open solid;}
+      .name, .value {
+        min-height: 20px;
+        cursor: default;
+      }
+      .value {
+        min-width: 40px;
+        text-align: right;
+      }
+      &.changed {background-color: $clr-changed;}
+      &.invalid {background-color: $clr-error;}
+      &.disabled {background: gray;}
+      .value-value {
+        color: #00ecff;
+        &:not(.editable-none) {cursor: pointer}
+      }
+    }
+    .add-comps {
+      background: $clr-nav-open;
+      text-align: center;
+      padding-bottom: 15px;
+      padding-top: 12px;
+      .delete-event {
+        color: white;
+        background: $clr-error-text;
+      }
+    }
+    .error-text {
+      color: white;
+      font-weight: 600;
+    }
+  }
+  .foot {
+    height: 80px;
+    min-height: 80px;
+    align-items: flex-end;
+    position: relative;
+    .button {
+      margin-bottom: 30px;
+      display: block;
+    }
+  }
+  .repeat-settings {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    .one-day {
+      display: flex;
+      padding: 0 20px;
+      select {
+        height: 100%;
+      }
+    }
+    .repeat-date-range, .button-center {text-align: center;}
+    .date-range-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  }
+  animation-duration: 200ms;
+  &.animation-show {
+    animation: line-editor-animation-show 200ms ease-in;
+  }
+  &.animation-hide {
+    animation: line-editor-animation-hide 200ms ease-out;
+  }
+  @keyframes line-editor-animation-show {
+    0% {right: -$line-editor-width;}
+    100% {right: 0;}
+  }
+  @keyframes line-editor-animation-hide {
+    0% {right: 0;}
+    100% {right: -$line-editor-width;}
+  }
+
+  .l-edit-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .editable-none {
+    .l-edit-controls {display: none;}
+  }
+}

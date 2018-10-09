@@ -1,0 +1,10 @@
+[draggable] {
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+}
+.draggable > .widget-head  {
+  cursor: move;
+}
+.draggable.over {
+  border: 2px dashed #000;
+}

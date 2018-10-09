@@ -1,0 +1,79 @@
+.list-selector{
+  background-color: $clr-nav;
+  padding: 15px;
+  top: 28px;
+  left: 445px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  .search-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .caption{
+      padding-right: 7px;
+    }
+    .search{
+      width: 100%;
+      border: none;
+    }
+    padding-bottom: 15px;
+  }
+  .select-deselect-full{
+    .button{
+      font-size: 0.9em;
+    }
+  }
+  .groups{
+    border: 2px $clr-base solid;
+    margin-bottom: 10px;
+    .group-caption{
+      font-weight: bold;
+      padding: 5px;
+      background-color: #5c9baa;
+    }
+    .group-item{
+      padding: 5px 15px;
+      cursor: pointer;
+      &:hover{
+        color: $clr-active;
+      }
+    }
+  }
+  .items-group-list{
+    overflow: auto;
+    height: 400px;
+    width: 800px;
+    .item-line{
+      padding: 2px 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .label{
+      //text-overflow: ellipsis;
+      //overflow: hidden;
+    }
+    .sub{
+      padding-left: 1em;
+    }
+  }
+  .single-select{
+    //color: red;
+    .l-checkbox-label{
+      //margin-left: 1em;
+      &:before{
+        background-image: url(../lure/img/l-radio.png);
+      }
+    }
+    .label-cbs{
+      margin-left: 1em;
+      &:before{
+        display: none;
+      }
+    }
+  }
+
+  .button-holder{
+    padding-top: 15px;
+  }
+}

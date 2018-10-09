@@ -1,0 +1,19 @@
+.club-paid-widget{
+  .widget-icon{
+    mask-image: url(img/platnie-meropriyatiya.svg);
+  }
+  .progress-bar{
+    &:before{
+      height: 21px;
+      top: 1px
+    }
+    .progress-caption{
+      padding-left: 15px;
+      font-size: 0.9em;
+      .value-inline{
+        min-width: 40px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.give-book-widget{
+  .widget-icon{
+    mask-image: url('img/vvod-dannih-knigovidacha.svg');
+  }
+  .widget-content{
+    flex-direction: row;
+  }
+
+  .inputs{
+    padding: 10px 0 15px 0;
+  }
+  .column{
+    flex:1;
+    padding: 0 15px
+  }
+  .column2{
+    padding: 20px 10px 0;
+
+    .inputs{
+      padding: 5px 0 10px 0;
+    }
+    .radio-item{
+      min-width: 135px;
+      padding: 2px 0;
+    }
+  }
+  .caption{
+    font-size: 1.1em;
+  }
+
+  .margin-group{
+    margin-top: 10px;
+  }
+  .button-holder{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    .button{
+      width: 84px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

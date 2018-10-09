@@ -1,0 +1,116 @@
+.register-widget{
+  position: relative;
+  .widget-icon{
+    mask-image: url(img/vvod-dannih-zapis.svg);
+    mask-size: 26px; //FIXME mask-size
+  }
+
+  .stat{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .visit-other{
+    .line{
+      height: 20px;
+      padding: 0 15px;
+    }
+  }
+  .visit-plan{
+    margin-top: 5px;
+    padding: 0 15px;
+    .line{
+      height: 20px;
+      padding: 10px 0;
+      margin-top: 4px;
+    }
+    .casual{
+      //font-size: 1.1em;
+    }
+    .strong{
+      padding-left: 5px;
+      font-weight: bold;
+    }
+  }
+  .progress-bar{
+    background-color: $clr-content2;
+    .progress-caption{
+      justify-content: center;
+    }
+  }
+  /* WIZARD */
+  .wizard{
+    padding: 15px 0 0 135px;
+    flex: 1;
+    background: url("img/dude.png") no-repeat 15px 20px;
+    background-color: inherit;
+    //color:  #949494;
+    line-height: 1.25;
+    .wizard-group{
+      margin-top: 5px;
+    }
+    .caption{
+      font-size: 1.1em;
+    }
+    .radio-element{
+      min-width: 75px;
+    }
+    .current-val{
+      color: $clr-base;
+      font-size: 0.9em;
+      //&:before{
+      //  content: '(';
+      //}
+      //&:after{
+      //  content: ')';
+      //}
+    }
+    .age{
+      .value{
+        padding-left: 5px;
+        .age-digit{
+          width: 14px;
+          height: 18px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: $clr-content2;
+          color: $clr-base-dark;
+          border: 1px $clr-base-dark solid;
+          border-right: none;
+          &:last-child{
+            border-right: 1px $clr-base-dark solid;
+          }
+        }
+      }
+    }
+    .social{
+      .social-columns{
+        height: 80px;
+      }
+    }
+    .actual-new-visitor{
+      padding: 0 3px;
+    }
+    .button-holder{
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 0.9em;
+      .button{
+        padding: 0;
+        width: 84px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+
+
+}

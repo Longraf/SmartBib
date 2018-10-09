@@ -1,0 +1,203 @@
+$border-color: #D2D2D2;
+$backgr-color: #DFDFDF;
+
+.help-desk.content {
+  will-change: auto;
+  max-height: calc(100vh - #{$h-header + $h-footer});
+  overflow: hidden;
+  .widget {
+    --widget-width: 3;
+    --widget-height: 1.7;
+    &.narrow {
+      --widget-width: 1.5;
+      .problem-icon {
+        display: none;
+      }
+    }
+    .problem-icon {
+      background-color: #4B7F87;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      height: 170px;
+      width: 170px;
+      margin-top: 10px;
+      &.workplace-service { mask-image: url("img/helpdesk-icons_01.svg"); }
+      &.pc-service { mask-image: url("img/helpdesk-icons-02.svg"); }
+      &.printer-service { mask-image: url("img/helpdesk-icons-03.svg"); }
+      &.soft-service { mask-image: url("img/helpdesk-icons-04.svg"); }
+      &.counters-service { mask-image: url("img/helpdesk-icons-05.svg"); }
+      &.event-service { mask-image: url("img/helpdesk-icons-06.svg"); }
+      &.repair-service { mask-image: url("img/helpdesk-icons-07.svg"); }
+      &.replace-setup-service { mask-image: url("img/helpdesk-icons-08.svg"); }
+    }
+    .widget-head .widget-caption {
+      padding-left: 10px;
+      font-size: 1.4em;
+    }
+  }
+  .form-opened { filter: blur(3px); }
+  .widgets {
+    display: flex;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    padding: 0;
+  }
+  .widget-text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .problem-icon, .problems {
+      flex: 1;
+      padding-top: 20px;
+      line-height: 1.1;
+    }
+    .problem-list-head {
+      font-weight: 600;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .problems ul { margin-left: 20px; }
+    .problems li {
+      list-style-type: disc;
+      cursor: pointer;
+      &:hover { color: #00afbd; }
+    }
+  }
+  .button-plus-wrapper {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    .button-plus.btn-switcher { cursor: pointer; }
+  }
+  .other-depart {
+    color: #4B7F87;
+    text-align: center;
+    font-weight: 600;
+    .depart-name { font-size: 5em; }
+    .depart { font-size: 2.7em; }
+  }
+  .request-overlay {
+    position: absolute;
+    top: 0;
+    letter-spacing: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.67);
+    .form-container { position: relative; }
+  }
+  .req-form-container {
+    position: absolute;
+    top: calc(50vh - 350px);
+    left: calc(50vw - 350px);
+    /*left: 0; only dev*/
+    width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    .form-files {
+      max-height: 140px;
+      min-height: 30px;
+      flex-flow: row wrap;
+      overflow: auto;
+      display: flex;
+      margin: 10px 0;
+    }
+
+    .add-new-file {
+      color: white;
+      background: #5C9BAA;
+      font-size: 0.9em;
+      padding: 2px 15px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .form-row {
+      padding: 15px;
+      border-bottom: 1px solid $border-color;
+      .row-name { padding: 10px 0; }
+      .problem-description, .problem-theme, .priority-select {
+        resize: none;
+        width: 100%;
+        padding: 2px;
+        border: 1px solid $border-color;
+        &:focus { outline: 0; }
+      }
+      .problem-description {
+        height: 100px;
+        width: calc(100% - 6px);
+        font: inherit;
+      }
+    }
+    .container-header {
+      background: $clr-base;
+      color: white;
+      font-size: 1.1em;
+      padding: 0 30px;
+      height: 40px;
+      align-items: center;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .container-body {
+      background: $backgr-color;
+      height: calc(100% - 68px);
+    }
+    .bottom-buttons {
+      background: $backgr-color;
+      height: 28px;
+      display: flex;
+      justify-content: space-around;
+      .cancel-button, .send-button {
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex: 0.5;
+        &.l-busy { color: transparent; }
+      }
+      .send-button { background: #5D99A8; }
+      .cancel-button { background: #4B7F85; }
+    }
+  }
+  .uploading-file {
+    height: 97px;
+    border: 1px solid $border-color;
+    width: 225px;
+    background: white;
+    display: flex;
+    margin: 0 10px 10px 0;
+    .file-icon {
+      width: 90px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .name-type {
+      color: #4B7F85;
+      .filename { word-wrap: break-word; }
+    }
+    .file-params {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 135px;
+    }
+    .rename-remove {
+      font-size: 13px;
+      margin: 7px 0 25px 0;
+      .rename, .remove {
+        cursor: pointer;
+        &:hover { color: #4B7F85 }
+      }
+    }
+  }
+  @import "my-reqs/my-reqs";
+}
+.flex1 {flex: 1}
+.flex2 {flex: 2}
+.flex3 {flex: 3}
+.flex4 {flex: 4}
+.flex-col {display: flex;flex-direction: column!important;}

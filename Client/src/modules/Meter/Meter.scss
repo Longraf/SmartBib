@@ -1,0 +1,183 @@
+.meter{
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$h-header + $h-footer});
+  .date-range {
+    display: flex;
+    .calendar-icon {padding: 0 5px;}
+  }
+  .meter-header {
+    display: flex;
+    flex-direction: row;
+    background: #2f3d44;
+    color: white;
+    .req-tab {
+      padding: 5px 25px;
+      cursor: pointer;
+      margin: 2px;
+    }
+    .active {
+      background: #fff;
+      color: black;
+    }
+  }
+
+  .meter-widget-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    will-change: top;
+    //padding: 20px;
+    padding-bottom: 20px;
+    .list-empty{
+      padding: 20px;
+      font-size: 1.5em;
+    }
+  }
+  .meter-widget{
+    background-color: $clr-content;
+    height: auto;
+    align-self: flex-start;
+    --widget-width: 2.2;
+    .widget-head{
+      height: 30px;
+      padding-left: 20px;
+      background-color: $clr-base;
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .widget-inner-content{
+      //padding: 15px;
+      .hat{
+        padding: 15px;
+      }
+    }
+    .meter-icon{
+      width: 80px;
+      height: 80px;
+      background-size: 65px;
+      background-position: center;
+      background-repeat: no-repeat;
+      &.meter-icon-0{
+        background-image: url("./img/meter-cold.png");
+      }
+      &.meter-icon-1{
+        background-image: url("./img/meter-hot.png");
+      }
+      &.meter-icon-2{
+        background-image: url("./img/meter-electro.png");
+      }
+    }
+    .meter-description{
+      padding: 0 15px;
+      font-size: 1rem;
+      .line{
+        padding: 2px 0;
+      }
+    }
+    .caption{
+      color: #333;
+    }
+    .value{
+      color: $clr-base-dark;
+    }
+    .file-slider{
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      padding: 0 15px 15px 15px;
+      .files-list-wrap {
+        background-color: #efefef;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 6px;
+        flex: 1;
+        scroll-behavior: smooth;
+      }
+      .control-scroll {
+        width: 15px;
+        //background: $clr-content2;//#E0E0E0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        color: #9e9e9e;
+      }
+    }
+    .tariff-holder{
+      padding: 0 15px;
+    }
+    .tariff{
+      border: 1px $clr-base solid;
+      color: $clr-base-dark;
+      padding: 3px 7px;
+    }
+    .chart-values{
+      padding: 15px;
+      height: 90px;
+      //outline: 1px #282 solid;
+    }
+    .meter-values{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $clr-base-dark;
+      padding: 1px;
+      .cell{
+        background-color: $clr-content0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        height: 25px;
+
+      }
+
+      .meter-col{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        //TODO FIX THIS SOMEHOW
+        .meter-caption,
+        .meter-value{
+          margin-left: 1px;
+          margin-top: 1px;
+        }
+        &:first-child{
+          .meter-caption,
+          .meter-value{
+            margin-left: 0;
+          }
+        }
+        .meter-value{
+          cursor: pointer;
+          font-size: 0.8em;
+          &:hover,
+          &.active{
+            background-color: $clr-waiting;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+.sup-small {
+  vertical-align: super;
+  font-size: 0.7em;
+}
+
+@import "MeterEditor/MeterEditor";
+@import "MeterIncoming/MeterValueInput/MeterValueInput";
+@import "MeterCommonInfo/MeterCommonInfo";

@@ -1,0 +1,39 @@
+  TypeID:
+  
+   [TypeID]([MessageType]) - [name] [description]
+  
+   1( ) - diary.visit.RegisterAdd/Rewind
+   2( ) - diary.visit.VisitAdd
+   3( ) - diary.visit.VisitEventAdd
+   4(1) - diary.bookware.GiveBookAdd
+   4(2) - diary.bookware.GiveDocAdd
+   4(3) - diary.bookware.GiveConsultAdd
+   4(4) - diary.bookware.GiveOtherAdd
+   5( ) - diary.movings
+   6(1) - diary.summary.part1236 change
+          [MessageText1] - cell names  list with comma (,) delimiter
+          [MessageText2] - cell values list with comma (,) delimiter
+   6(4) - diary.summary.part4 change
+   6(5) - diary.summary.part5 change
+   7( ) - passport change
+   8( ) - datainput.plan change
+          [Value1] = Year
+   9(1) - datainput.event.add
+   9(2) - datainput.event.edit
+   9(3) - datainput.event.remove
+  10(1) - helpdesk.add
+          [ItemID] = HelpDeskID
+  10(2) - helpdesk.edit
+          [ItemID] = HelpDeskID
+  10(3) - helpdesk.MessageAdd
+          [MessageText1] = Message
+          [ItemID] = HelpDeskID 
+  11(1) - meter.add
+  11(2) - meter.edit
+  11(3) - meter.replace
+  11(4) - meter.value.add
+  11(5) - meter.tariff.add
+  11(6) - meter.addfile
+  
+  anywhere if extis:
+    [LibraryID], [DateValue]

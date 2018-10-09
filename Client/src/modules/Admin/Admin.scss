@@ -1,0 +1,105 @@
+.admin{
+  will-change: auto;
+  max-height: calc(100vh - #{$h-header + $h-footer});
+  overflow: auto;
+  padding: 15px;
+  .h2{
+    font-size: 1.5em;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  .h3{
+    font-size: 1.35em;
+    padding: 15px 7px;
+    padding-bottom: 10px;
+  }
+
+  .block{
+    padding: 10px 0;
+  }
+  .title{
+    padding: 5px 0 ;
+  }
+  .select-cbs{
+    width: 200px;
+  }
+  .sort-user-list{
+    .element{
+      padding-right: 30px;
+      color: #fff
+    }
+    .name{
+      background-color: $clr-base;
+    }
+    .position{
+      background-color: $clr-base-dark;
+    }
+  }
+  .user-list{
+    height: 300px;
+    width: 600px;
+    overflow: auto;
+    border: 1px $clr-base solid;
+    .tr{
+      .position{
+        width: 150px;
+        max-width: 150px;
+      }
+      &.active,
+      &:hover{
+        cursor: pointer;
+        background-color: $clr-base;
+        color: #fff;
+      }
+    }
+  }
+
+
+  .user-card-wrap{
+    margin-right: 20px;
+  }
+  .user-wrap{
+    width: 1200px;
+  }
+  .user-card{
+    padding: 15px 8px;
+    width: 600px;
+    background-color: $clr-interlinear;
+    .l-line{
+      //border-bottom: 1px $clr-base solid;
+    }
+    .caption,
+    .value{
+      padding: 3px 7px;
+    }
+    .caption{
+      width: 150px;
+    }
+    .value{
+      flex:1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 1.1;
+    }
+    .textbox,
+    .select{
+      width: 100%;
+    }
+    //.value-role,
+    .value-library,
+    .value-cbs
+    {
+      max-height: 160px;
+      overflow: auto;
+    }
+  }
+  .pass-changing{
+    .line{
+      margin-top: 10px;
+    }
+  }
+  .btn-user-kill{
+    background-color: $clr-error;
+  }
+}

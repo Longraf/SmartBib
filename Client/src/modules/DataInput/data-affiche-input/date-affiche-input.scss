@@ -1,0 +1,82 @@
+.data-input.affiche-input {
+  //.date-affiche-interval {
+  //  padding: 0 10px;
+  //}
+  .date-range {
+    display: flex;
+    flex-direction: row;
+    .calendar-icon {padding: 0 10px;}
+  }
+  .affiche-table {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #BEC1C2;
+      padding: 5px;
+      vertical-align: sub;
+    }
+    td:nth-child(1) {text-align: center;}
+    th {
+      font-weight: 600;
+    }
+    thead tr {
+      background-color: #E1E1E1;
+      .mass-select {
+        background-color: red;
+      }
+      th {
+        text-align: center;
+        vertical-align: middle;
+        &:nth-child(1) {width: 40px;}
+        &:nth-child(2) {width: 80px;}
+        &:nth-child(3) {width: 80px;}
+        &:nth-child(n + 4) {min-width: 150px;}
+      }
+    }
+    tbody tr {
+      cursor: default;
+      &:nth-child(2n - 1) {background: #F2F2F2;}
+      &:nth-child(2n) {background: #E1E1E1;}
+      &:hover, &.selected {background: #5C9BAA; color: white;}
+    }
+  }
+
+  .center {text-align: center}
+
+  .ev-checks {
+    width: 40px;
+    .wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .mass-actions {
+      padding: 1px 4px;
+      font-size: 0.9em;
+    }
+  }
+  .mass-check {text-align: center;}
+  .action-list {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid black;
+    z-index: 5;
+    .action-type {
+      padding: 2px 12px;
+      cursor: pointer;
+      &:hover {background: #5D9BAA;color: white;}
+    }
+  }
+  .single-event-line {
+    &.mass-select {
+      background: #fff6ba;
+      color: #000;
+    }
+  }
+
+}
+
+@import "event-editor/event-editor";
+@import "event-wizard/event-wizard";

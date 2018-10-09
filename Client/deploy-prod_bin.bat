@@ -1,0 +1,1 @@
+xcopy  "%cd%\..\Build\Release\ServiceIIS\*.dll" \\192.168.12.12\c$\WWW\smartbib.ru\bin\ /e/i/y

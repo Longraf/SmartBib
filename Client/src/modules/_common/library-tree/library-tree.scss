@@ -1,0 +1,56 @@
+.library-tree{
+  background-color: $clr-nav;
+  padding: 15px;
+
+  top: 28px;
+  left: 445px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  .search-box{
+    .caption{
+      padding-right: 7px;
+    }
+    .search{
+      width: 100%;
+      border: none;
+    }
+    padding-bottom: 15px;
+  }
+  .lib-group-list{
+    overflow: auto;
+    height: 400px;
+    width: 800px;
+    .lib-line{
+      padding: 2px 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .label{
+      //text-overflow: ellipsis;
+      //overflow: hidden;
+    }
+    .sub{
+      padding-left: 1em;
+    }
+  }
+  .single-select{
+    //color: red;
+    .l-checkbox-label{
+      //margin-left: 1em;
+      &:before{
+        background-image: url(../lure/img/l-radio.png);
+      }
+    }
+    .label-cbs{
+      margin-left: 1em;
+      &:before{
+        display: none;
+      }
+    }
+  }
+
+  .button-holder{
+    padding-top: 15px;
+  }
+}

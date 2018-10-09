@@ -1,0 +1,23 @@
+.account{
+  will-change: auto;
+  max-height: calc(100vh - #{$h-header + $h-footer});
+  overflow: auto;
+  padding: 15px;
+  .h2{
+    font-size: 1.5em;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  .h3{
+    font-size: 1.35em;
+    padding: 15px 7px;
+    padding-bottom: 10px;
+  }
+
+
+  .change-pass{
+    .line{
+      padding: 5px 0;
+    }
+  }
+}

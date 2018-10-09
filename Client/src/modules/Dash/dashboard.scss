@@ -1,0 +1,258 @@
+// Беляев
+$border-color: #d5d5d5;
+
+.dash.content{
+  height: calc(100vh - #{$h-header + $h-footer});
+  overflow-y: auto;
+  will-change: transform;
+  overflow: auto;
+
+  .library-tree-control{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 1000px;
+  }
+
+  .period-picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 10px 23px 10px;
+    .periods, .calendar-period {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+    }
+    .per {
+      padding: 7px;
+      border-left: 1px solid $border-color;
+      cursor: pointer;
+      &.selected {
+        background: #A8E8EF;
+      }
+      &:hover {
+        background: #d2fbff;
+      }
+    }
+
+    .calendar-period {
+      padding: 7px;
+      margin-left: 10px;
+      .icon {
+        padding: 0 5px;
+      }
+    }
+  }
+  .chart-header{
+    margin: 10px;
+    font-size: 1.1em;
+  }
+  .pies {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .pie-visitors-wrap, .pie-registers-double, .pie-book-giving-wrap {
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      min-width: 260px;
+      min-height: 385px;
+      margin-left: 25px;
+      margin-bottom: 25px;
+    }
+    .pie-registers-double {
+      display: flex;
+      flex-direction: column;
+      min-width: 512px;
+      .pie-registers-double-wrap {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .pie {
+      height: 230px;
+      width: 250px;
+    }
+    .pie-registers, .pie-book-giving, .pie-visitors {
+      height: 230px;
+      width: 250px;
+      position: relative;
+      .chart-subscript {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .sub-icon {
+          font-size: 1.5em;
+          font-weight: 600;
+          &.param-icon {text-align: center;}
+        }
+        .sub-caption {
+          text-align: center;
+          font-size: 1em;
+        }
+      }
+    }
+    .parameters {
+      margin: 10px;
+      .row {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: space-between;
+        height: 22px;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        &:last-child {
+          border-bottom: none;
+        }
+        .color-mark {
+          left: 0;
+          top: 7px;
+        }
+      }
+      .color-mark {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+      }
+      .parameter-name {
+        margin-left: 15px;
+      }
+      .param-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1em;
+      }
+      .percent-123 {
+        color: #D6D5D5;
+        font-size: 0.9em;
+        cursor: pointer;
+        .selected {
+          color: #75AAB6;
+        }
+      }
+      .double-chart {
+        cursor: pointer;
+        &:hover { color: #00afbd; }
+      }
+    }
+    .l-chart .chart-name{
+      padding: 0!important;
+    }
+  }
+  .gender-age-table {
+    border-collapse: collapse;
+    .color-mark { left: 2px; top: 4px; }
+    .head { font-size: 0.8em; }
+    td {
+      border: 1px solid $border-color;
+      width: 60px;
+      height: 19px;
+      text-align: center;
+      position: relative;
+      &:first-child {
+        text-align: right;
+      }
+      &.no-border {
+        border: none;
+      }
+    }
+    .second {
+      text-align: right;
+      padding-right: 5px;
+      font-size: 0.8em;
+    }
+  }
+  .color-mark {
+    &.women-30{ background: #993F73;}
+    &.men-30, &.others{ background: #345466;}
+    &.women-14-30{ background: #7F3663;}
+    &.men-14-30, &.rdch{ background: #40667F;}
+    &.women-14{ background: #662C53;}
+    &.men-14{ background: #4B7799;}
+    &.women-all{ background: #D7569C;}
+    &.men-all{ background: #6CA9E0;}
+    &.all-14{ background: #3C5F42;}
+    &.all-14-30{ background: #589255;}
+    &.all-30{ background: #74B87A;}
+    &.new-reg, &.employee{ background: #416E75;}
+    &.stationary{ background: #79CDDB;}
+    &.events{ background: #708284;}
+    &.clubs{ background: #51A2A8;}
+    &.pensioner{ background: #51A1A7;}
+    &.students{ background: #79CCDA;}
+    &.schools{ background: #20A4A4;}
+    &.under-school{ background: #4B7798;}
+    &.all-register{ background: #4A8453; }
+  }
+  .daily-chart {
+    //width: 1500px;
+    height: 370px;
+    padding: 20px 25px;
+    .chart-wrap {
+      //height: 80%;
+      //border: 1px solid $border-color;
+      //border-radius: 10px;
+      //padding-top: 15px;
+      .l-chart {
+        height: 300px;
+        border: 1px solid #d5d5d5;
+        border-radius: 10px;
+        padding: 10px 15px;
+        .chart-name {
+          text-align: left;
+          font-weight: normal;
+          font-size: 1.1em;
+          padding-bottom: 20px;
+        }
+        .legend-box {
+          border: 1px $border-color solid;
+          margin-left: 15px;
+        }
+      }
+    }
+    .chart-header {
+      margin-left: 20px;
+    }
+  }
+  .series-hide {
+    opacity: .5;
+  }
+}
+.dash-summary {
+  .date-range {
+    display: flex;
+    flex-direction: row;
+    .calendar-icon {padding: 0 5px;}
+  }
+}
+////
+.rotor {
+  perspective: 3000px;
+}
+.rotor > .rotor-flip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  //transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.45s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+.next {
+  transform: rotateY(180deg);
+}
+.flipped {
+  transform: rotateY(-180deg);
+}
+@import "summary/dash-summary";
+@import "six-nk/six-nk";

@@ -1,0 +1,68 @@
+.six-nk {
+  .part-header {
+    display: flex;
+    flex-direction: row;
+    background: #2f3d44;
+    color: white;
+    .req-tab {
+      padding: 5px 8px;
+      cursor: pointer;
+      margin: 1px;
+      text-align: center;
+    }
+    .active {
+      background: #fff;
+      color: black;
+    }
+  }
+  .date-range {
+    display: flex;
+    flex-direction: row;
+    .calendar-icon {padding: 0 5px;}
+  }
+  .button{
+    //background-color: transparent; //for what a hell?
+    color: inherit;
+    &:hover{
+      color: #fff;
+      cursor: pointer;
+    }
+    &.l-busy{
+      color: transparent;
+    }
+  }
+  .button-get-xls, .btn-refresh {
+    background-color: transparent;
+    color: inherit;
+  }
+  .center {text-align: center;}
+  .grey-back {background: #C0C0C0;}
+  .border {border: 2px solid black}
+  .data-part {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    > div {
+      margin: 5px;
+      padding: 7px;
+      max-width: 1300px;
+    }
+    td, th {
+      border: 1px solid black;
+      padding: 3px;
+    }
+    th {text-align: center}
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+    .underline {border-bottom: 1px solid black;}
+    .flex-row {display: flex; flex-direction: row;}
+    .right {text-align: right;}
+    .all-center {* {text-align: center}}
+    .mar-7 {margin: 7px;}
+    .mar-7-all {margin: 7px; * {margin: 7px;}}
+    .divide {display: flex; flex-direction: column; justify-content: flex-end;}
+    .divide-sub {text-align: center; font-size: 0.9em;}
+  }
+}

@@ -1,0 +1,9 @@
+.settings-menu{
+  .settings-container {
+    padding: 20px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    @import "navigator/navigator";
+  }
+}

@@ -1,0 +1,75 @@
+.visit-autocounter-widget{
+  color: #949494;
+  .widget-icon{
+    mask-image: url(img/schetchiki-poseshenii.svg);
+    mask-size: 30px; //FIXME mask-size
+  }
+  .hint-warner{
+    padding: 10px;
+    font-size: 0.65em;//10px;
+    line-height: 1.2;
+  }
+
+  .counters{
+    padding: 42px 23px 0 23px;
+  }
+  .counter{
+    //height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    .digit{
+      width: 30px;
+      height: 50px;
+      background: radial-gradient(#fff, #D2D1CF);
+      border-radius: 7px;
+      border: 1px #969593 solid;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0 2px;
+    }
+  }
+  .counter-captions{
+    padding: 10px 23px 0 23px;
+    .counter-caption{
+      flex:1;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .btn-refresh{
+    padding: 0;
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+
+  }
+
+  .connection-status{
+    margin-top: auto;
+    text-align: right;
+    padding: 12px;
+    .caption{
+      padding-right: 3px;
+    }
+    .connection-icon{
+      content: '';
+      width:  0.6em;
+      height: 0.6em;
+      background-color: #f10000;
+      border-radius: 50%;
+      &.connected{
+        background-color: #4EAF62;
+      }
+    }
+  }
+
+}

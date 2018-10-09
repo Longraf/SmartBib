@@ -1,0 +1,34 @@
+.give-book-progress-widget{
+  .widget-icon{
+    mask-image: url('img/svod.svg');
+  }
+  .give-book-progress-chart{
+    //width: 100%;
+    height: calc(100% - 40px);
+    padding: 20px;
+  }
+  .give-book-progress-plan{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center;
+    .achieved{
+      padding-bottom: 7px;
+    }
+    .value{
+      font-size: 3em;
+    }
+    .casual{
+      font-size: 1em;
+    }
+  }
+}
